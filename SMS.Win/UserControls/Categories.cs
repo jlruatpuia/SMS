@@ -61,6 +61,17 @@ namespace SMS.Win.UserControls
                 bNXT.Enabled = false;
                 bFFW.Enabled = false;
             }
+            else
+            {
+                bEdit.Enabled = true;
+                bDel.Enabled = true;
+                bPreview.Enabled = true;
+                bEXP.Enabled = true;
+                bREV.Enabled = true;
+                bPRV.Enabled = true;
+                bNXT.Enabled = true;
+                bFFW.Enabled = true;
+            }
         }
     }
 }

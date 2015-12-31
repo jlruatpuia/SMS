@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
@@ -35,15 +36,19 @@
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bShopDetails = new DevExpress.XtraBars.BarButtonItem();
             this.rpSettings = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.spl = new DevExpress.XtraEditors.SplitContainerControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiCategories = new DevExpress.XtraNavBar.NavBarItem();
             this.backstageViewControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.backstageViewClientControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.backstageViewTabItem2 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
+            this.dlaf = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
@@ -62,9 +67,10 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.skinRibbonGalleryBarItem1,
             this.barButtonItem1,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.bShopDetails});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.MaxItemId = 2;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpSettings});
@@ -115,11 +121,22 @@
             this.barButtonItem2.Id = 3;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
+            // bShopDetails
+            // 
+            this.bShopDetails.Caption = "Shop Details";
+            this.bShopDetails.Glyph = ((System.Drawing.Image)(resources.GetObject("bShopDetails.Glyph")));
+            this.bShopDetails.Id = 1;
+            this.bShopDetails.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bShopDetails.LargeGlyph")));
+            this.bShopDetails.Name = "bShopDetails";
+            this.bShopDetails.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bShopDetails_ItemClick);
+            // 
             // rpSettings
             // 
             this.rpSettings.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
+            this.rpSettings.MergeOrder = 1;
             this.rpSettings.Name = "rpSettings";
             this.rpSettings.Text = "Settings";
             // 
@@ -137,6 +154,13 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "Database";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.bShopDetails);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.ShowCaptionButton = false;
+            this.ribbonPageGroup3.Text = "Info";
             // 
             // spl
             // 
@@ -157,6 +181,8 @@
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1});
+            this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.nbiCategories});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 226;
@@ -171,7 +197,16 @@
             // 
             this.navBarGroup1.Caption = "Navigation";
             this.navBarGroup1.Expanded = true;
+            this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiCategories)});
             this.navBarGroup1.Name = "navBarGroup1";
+            // 
+            // nbiCategories
+            // 
+            this.nbiCategories.Caption = "Categories";
+            this.nbiCategories.Name = "nbiCategories";
+            this.nbiCategories.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiCategories.SmallImage")));
+            this.nbiCategories.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiCategories_LinkClicked);
             // 
             // backstageViewControl2
             // 
@@ -211,6 +246,7 @@
             this.Name = "MainForm";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).EndInit();
             this.backstageViewControl1.ResumeLayout(false);
@@ -242,6 +278,10 @@
         private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageViewControl2;
         private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl2;
         private DevExpress.XtraBars.Ribbon.BackstageViewTabItem backstageViewTabItem2;
+        private DevExpress.XtraNavBar.NavBarItem nbiCategories;
+        private DevExpress.XtraBars.BarButtonItem bShopDetails;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel dlaf;
     }
 }
 

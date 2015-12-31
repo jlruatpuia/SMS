@@ -25,6 +25,20 @@ namespace SMS.DAL
             public string Description;
         }
 
+        public DataTable GetAllCategories()
+        {
+            OleDbCommand cmd = new OleDbCommand()
+            {
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "GetAllCategories",
+                Connection = cm
+            };
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds.Tables[0];
+        }
+
         public string CreateCategory(string CategoryName, string Description)
         {
             string msg = null;
