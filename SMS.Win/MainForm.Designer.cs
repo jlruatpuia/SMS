@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
@@ -48,7 +49,8 @@
             this.backstageViewControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.backstageViewClientControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.backstageViewTabItem2 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
-            this.dlaf = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.dlaf = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.nbiCustomers = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
@@ -182,7 +184,8 @@
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
-            this.nbiCategories});
+            this.nbiCategories,
+            this.nbiCustomers});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 226;
@@ -198,7 +201,8 @@
             this.navBarGroup1.Caption = "Navigation";
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiCategories)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiCategories),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiCustomers)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // nbiCategories
@@ -232,6 +236,13 @@
             this.backstageViewTabItem2.ContentControl = this.backstageViewClientControl2;
             this.backstageViewTabItem2.Name = "backstageViewTabItem2";
             this.backstageViewTabItem2.Selected = false;
+            // 
+            // nbiCustomers
+            // 
+            this.nbiCustomers.Caption = "Customers";
+            this.nbiCustomers.Name = "nbiCustomers";
+            this.nbiCustomers.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiCustomers.SmallImage")));
+            this.nbiCustomers.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiCustomers_LinkClicked);
             // 
             // MainForm
             // 
@@ -282,6 +293,7 @@
         private DevExpress.XtraBars.BarButtonItem bShopDetails;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.LookAndFeel.DefaultLookAndFeel dlaf;
+        private DevExpress.XtraNavBar.NavBarItem nbiCustomers;
     }
 }
 

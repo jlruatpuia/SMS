@@ -36,20 +36,11 @@
             this.popDel = new DevExpress.XtraBars.PopupMenu();
             this.bDelSel = new DevExpress.XtraBars.BarButtonItem();
             this.bDelAll = new DevExpress.XtraBars.BarButtonItem();
-            this.rpCategories = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.grd = new DevExpress.XtraGrid.GridControl();
-            this.grv = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCatName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCatDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bFind = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.bREV = new DevExpress.XtraBars.BarButtonItem();
             this.bPRV = new DevExpress.XtraBars.BarButtonItem();
             this.bNXT = new DevExpress.XtraBars.BarButtonItem();
             this.bFFW = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.bPreview = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -57,6 +48,15 @@
             this.bPDF = new DevExpress.XtraBars.BarButtonItem();
             this.bXLS = new DevExpress.XtraBars.BarButtonItem();
             this.bXLSX = new DevExpress.XtraBars.BarButtonItem();
+            this.rpCategories = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.grd = new DevExpress.XtraGrid.GridControl();
+            this.grv = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCatName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCatDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popDel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
@@ -99,6 +99,7 @@
             this.bNew.Id = 1;
             this.bNew.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bNew.LargeGlyph")));
             this.bNew.Name = "bNew";
+            this.bNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bNew_ItemClick);
             // 
             // bEdit
             // 
@@ -107,6 +108,7 @@
             this.bEdit.Id = 2;
             this.bEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bEdit.LargeGlyph")));
             this.bEdit.Name = "bEdit";
+            this.bEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bEdit_ItemClick);
             // 
             // bDel
             // 
@@ -141,80 +143,6 @@
             this.bDelAll.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bDelAll.LargeGlyph")));
             this.bDelAll.Name = "bDelAll";
             // 
-            // rpCategories
-            // 
-            this.rpCategories.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup3});
-            this.rpCategories.Image = ((System.Drawing.Image)(resources.GetObject("rpCategories.Image")));
-            this.rpCategories.MergeOrder = 0;
-            this.rpCategories.Name = "rpCategories";
-            this.rpCategories.Text = "Categories";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.bNew);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bEdit);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bDel);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.ShowCaptionButton = false;
-            this.ribbonPageGroup1.Text = "Data Management";
-            // 
-            // grd
-            // 
-            this.grd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd.Location = new System.Drawing.Point(0, 144);
-            this.grd.MainView = this.grv;
-            this.grd.MenuManager = this.ribbonControl1;
-            this.grd.Name = "grd";
-            this.grd.Size = new System.Drawing.Size(731, 357);
-            this.grd.TabIndex = 1;
-            this.grd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grv});
-            // 
-            // grv
-            // 
-            this.grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID,
-            this.colCatName,
-            this.colCatDesc});
-            this.grv.GridControl = this.grd;
-            this.grv.Name = "grv";
-            this.grv.OptionsView.ShowGroupPanel = false;
-            this.grv.RowCountChanged += new System.EventHandler(this.grv_RowCountChanged);
-            // 
-            // colID
-            // 
-            this.colID.Caption = "gridColumn1";
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
-            this.colID.OptionsColumn.AllowEdit = false;
-            this.colID.OptionsColumn.AllowFocus = false;
-            this.colID.OptionsColumn.ReadOnly = true;
-            // 
-            // colCatName
-            // 
-            this.colCatName.Caption = "Name";
-            this.colCatName.FieldName = "CategoryName";
-            this.colCatName.Name = "colCatName";
-            this.colCatName.OptionsColumn.AllowEdit = false;
-            this.colCatName.OptionsColumn.AllowFocus = false;
-            this.colCatName.OptionsColumn.ReadOnly = true;
-            this.colCatName.Visible = true;
-            this.colCatName.VisibleIndex = 0;
-            // 
-            // colCatDesc
-            // 
-            this.colCatDesc.Caption = "Description";
-            this.colCatDesc.FieldName = "Description";
-            this.colCatDesc.Name = "colCatDesc";
-            this.colCatDesc.OptionsColumn.AllowEdit = false;
-            this.colCatDesc.OptionsColumn.AllowFocus = false;
-            this.colCatDesc.OptionsColumn.ReadOnly = true;
-            this.colCatDesc.Visible = true;
-            this.colCatDesc.VisibleIndex = 1;
-            // 
             // bFind
             // 
             this.bFind.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
@@ -224,17 +152,6 @@
             this.bFind.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bFind.LargeGlyph")));
             this.bFind.Name = "bFind";
             this.bFind.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bFind_ItemClick);
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.bREV);
-            this.ribbonPageGroup2.ItemLinks.Add(this.bPRV);
-            this.ribbonPageGroup2.ItemLinks.Add(this.bNXT);
-            this.ribbonPageGroup2.ItemLinks.Add(this.bFFW);
-            this.ribbonPageGroup2.ItemLinks.Add(this.bFind, true);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.ShowCaptionButton = false;
-            this.ribbonPageGroup2.Text = "Navigation";
             // 
             // bREV
             // 
@@ -271,14 +188,6 @@
             this.bFFW.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bFFW.LargeGlyph")));
             this.bFFW.Name = "bFFW";
             this.bFFW.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bFFW_ItemClick);
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.bPreview);
-            this.ribbonPageGroup3.ItemLinks.Add(this.bEXP);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.ShowCaptionButton = false;
-            this.ribbonPageGroup3.Text = "Print && Export";
             // 
             // bPreview
             // 
@@ -335,6 +244,99 @@
             this.bXLSX.Id = 17;
             this.bXLSX.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bXLSX.LargeGlyph")));
             this.bXLSX.Name = "bXLSX";
+            // 
+            // rpCategories
+            // 
+            this.rpCategories.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
+            this.rpCategories.Image = ((System.Drawing.Image)(resources.GetObject("rpCategories.Image")));
+            this.rpCategories.MergeOrder = 0;
+            this.rpCategories.Name = "rpCategories";
+            this.rpCategories.Text = "Categories";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.bNew);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bEdit);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bDel);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.ShowCaptionButton = false;
+            this.ribbonPageGroup1.Text = "Data Management";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.bREV);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bPRV);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bNXT);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bFFW);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bFind, true);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.ShowCaptionButton = false;
+            this.ribbonPageGroup2.Text = "Navigation";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.bPreview);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bEXP);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.ShowCaptionButton = false;
+            this.ribbonPageGroup3.Text = "Print && Export";
+            // 
+            // grd
+            // 
+            this.grd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grd.Location = new System.Drawing.Point(0, 144);
+            this.grd.MainView = this.grv;
+            this.grd.MenuManager = this.ribbonControl1;
+            this.grd.Name = "grd";
+            this.grd.Size = new System.Drawing.Size(731, 357);
+            this.grd.TabIndex = 1;
+            this.grd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grv});
+            // 
+            // grv
+            // 
+            this.grv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID,
+            this.colCatName,
+            this.colCatDesc});
+            this.grv.GridControl = this.grd;
+            this.grv.Name = "grv";
+            this.grv.OptionsView.ShowGroupPanel = false;
+            this.grv.RowCountChanged += new System.EventHandler(this.grv_RowCountChanged);
+            // 
+            // colID
+            // 
+            this.colID.Caption = "gridColumn1";
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            this.colID.OptionsColumn.AllowEdit = false;
+            this.colID.OptionsColumn.AllowFocus = false;
+            this.colID.OptionsColumn.ReadOnly = true;
+            // 
+            // colCatName
+            // 
+            this.colCatName.Caption = "Name";
+            this.colCatName.FieldName = "CategoryName";
+            this.colCatName.Name = "colCatName";
+            this.colCatName.OptionsColumn.AllowEdit = false;
+            this.colCatName.OptionsColumn.AllowFocus = false;
+            this.colCatName.OptionsColumn.ReadOnly = true;
+            this.colCatName.Visible = true;
+            this.colCatName.VisibleIndex = 0;
+            // 
+            // colCatDesc
+            // 
+            this.colCatDesc.Caption = "Description";
+            this.colCatDesc.FieldName = "Description";
+            this.colCatDesc.Name = "colCatDesc";
+            this.colCatDesc.OptionsColumn.AllowEdit = false;
+            this.colCatDesc.OptionsColumn.AllowFocus = false;
+            this.colCatDesc.OptionsColumn.ReadOnly = true;
+            this.colCatDesc.Visible = true;
+            this.colCatDesc.VisibleIndex = 1;
             // 
             // Categories
             // 

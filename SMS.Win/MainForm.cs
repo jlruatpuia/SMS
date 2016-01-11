@@ -61,6 +61,7 @@ namespace SMS.Win
             Categories uc = new Categories();
             LoadUserControl(uc);
             ribbonControl1.MergeRibbon(uc.ribbonControl1);
+            ribbonControl1.SelectedPage = ribbonControl1.MergedPages[0];
         }
 
         private void bShopDetails_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -69,6 +70,12 @@ namespace SMS.Win
             frm.ShowDialog();
         }
 
-        
+        private void nbiCustomers_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Customer uc = new Customer();
+            LoadUserControl(uc);
+            ribbonControl1.MergeRibbon(uc.ribbonControl1);
+            ribbonControl1.SelectedPage = ribbonControl1.MergedPages[0];
+        }
     }
 }

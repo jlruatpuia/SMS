@@ -73,5 +73,35 @@ namespace SMS.Win.UserControls
                 bFFW.Enabled = true;
             }
         }
+
+        private void bNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DAL.Categories cat = new DAL.Categories();
+            UserForms.Category frm = new UserForms.Category();
+            frm.btnUpdate.Visible = false;
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                cat.CreateCategory(frm.CategoryName, frm.Description);
+            }
+            else if(frm.ShowDialog() == DialogResult.Retry)
+            {
+                cat.CreateCategory(frm.CategoryName, frm.Description);
+                //new (frm.ShowDialog());
+            }
+        }
+
+        private void bEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UserForms.Category frm = new UserForms.Category();
+            int ID = (int)grv.GetFocusedRowCellValue(colID);
+            frm.CategoryName = grv.GetFocusedRowCellValue(colCatName).ToString();
+            frm.Description = grv.GetFocusedRowCellValue(colCatDesc).ToString();
+            frm.btnSave.Visible = false;
+            frm.btnSaveNew.Visible = false;
+            if(frm.ShowDialog() == DialogResult.Yes)
+            {
+                cat.UpdateCategory(frm.CategoryName, frm.Description, ID);
+            }
+        }
     }
 }

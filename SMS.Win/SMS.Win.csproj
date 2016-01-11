@@ -76,6 +76,24 @@
     <Compile Include="UserControls\Categories.Designer.cs">
       <DependentUpon>Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForms\ShopDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +115,15 @@
     </Compile>
     <EmbeddedResource Include="UserControls\Categories.resx">
       <DependentUpon>Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\ShopDetails.resx">
       <DependentUpon>ShopDetails.cs</DependentUpon>
