@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SMS.DAL
 {
@@ -50,6 +46,31 @@ namespace SMS.DAL
             };
             cmd.Parameters.AddWithValue("@CategoryName", CategoryName);
             cmd.Parameters.AddWithValue("@Description", Description);
+            try
+            {
+                cm.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            finally { cm.Close(); }
+            return msg;
+        }
+
+        public string UpdateCategory(string CategoryName, string Description, int ID)
+        {
+            string msg = null;
+            OleDbCommand cmd = new OleDbCommand()
+            {
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "UpdateCategory",
+                Connection = cm,
+            };
+            cmd.Parameters.AddWithValue("@CategoryName", CategoryName);
+            cmd.Parameters.AddWithValue("@Description", Description);
+            cmd.Parameters.AddWithValue("@ID", ID);
             try
             {
                 cm.Open();
