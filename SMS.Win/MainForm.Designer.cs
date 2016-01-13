@@ -46,11 +46,12 @@
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbiCategories = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiCustomers = new DevExpress.XtraNavBar.NavBarItem();
             this.backstageViewControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.backstageViewClientControl2 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.backstageViewTabItem2 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.dlaf = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.nbiCustomers = new DevExpress.XtraNavBar.NavBarItem();
+            this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
@@ -70,9 +71,10 @@
             this.skinRibbonGalleryBarItem1,
             this.barButtonItem1,
             this.barButtonItem2,
-            this.bShopDetails});
+            this.bShopDetails,
+            this.barDockingMenuItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 2;
+            this.ribbonControl1.MaxItemId = 3;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rpSettings});
@@ -212,6 +214,13 @@
             this.nbiCategories.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiCategories.SmallImage")));
             this.nbiCategories.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiCategories_LinkClicked);
             // 
+            // nbiCustomers
+            // 
+            this.nbiCustomers.Caption = "Customers";
+            this.nbiCustomers.Name = "nbiCustomers";
+            this.nbiCustomers.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiCustomers.SmallImage")));
+            this.nbiCustomers.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiCustomers_LinkClicked);
+            // 
             // backstageViewControl2
             // 
             this.backstageViewControl2.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Yellow;
@@ -237,12 +246,11 @@
             this.backstageViewTabItem2.Name = "backstageViewTabItem2";
             this.backstageViewTabItem2.Selected = false;
             // 
-            // nbiCustomers
+            // barDockingMenuItem1
             // 
-            this.nbiCustomers.Caption = "Customers";
-            this.nbiCustomers.Name = "nbiCustomers";
-            this.nbiCustomers.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiCustomers.SmallImage")));
-            this.nbiCustomers.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiCustomers_LinkClicked);
+            this.barDockingMenuItem1.Caption = "barDockingMenuItem1";
+            this.barDockingMenuItem1.Id = 2;
+            this.barDockingMenuItem1.Name = "barDockingMenuItem1";
             // 
             // MainForm
             // 
@@ -254,6 +262,7 @@
             this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.backstageViewControl2);
             this.Controls.Add(this.ribbonControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Form1";
@@ -294,6 +303,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.LookAndFeel.DefaultLookAndFeel dlaf;
         private DevExpress.XtraNavBar.NavBarItem nbiCustomers;
+        private DevExpress.XtraBars.BarDockingMenuItem barDockingMenuItem1;
     }
 }
 

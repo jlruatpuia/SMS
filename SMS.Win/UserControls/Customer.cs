@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SMS.DAL;
+using DevExpress.XtraReports.UI;
 
 namespace SMS.Win.UserControls
 {
@@ -191,6 +192,25 @@ namespace SMS.Win.UserControls
                 colCash.Visible = false;
                 //colCash.VisibleIndex =
             }
+        }
+
+        private void grv_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            int id = (int)grv.GetFocusedRowCellValue(colID);
+            lbCNM.Text = cus.GetCustomer(id).CustomerName;
+            lbADR.Text = cus.GetCustomer(id).Address;
+            lbPHN.Text = cus.GetCustomer(id).PhoneNo;
+            lbEML.Text = cus.GetCustomer(id).Email;
+            lbCSH.Text = cus.GetCustomer(id).Balance.ToString();
+            picPHO.Image = UserClass.Utils.ConvertImage(cus.GetCustomer(id).Photo);
+        }
+
+        private void bPPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Reports.Customers rpt = new Reports.Customers();
+            rpt.lbSNM.Text = Properties.Settings.Default.ShopName;
+            rpt.lbTAG.Text = Properties.Settings.Default.TagLine;
+            rpt.ShowPreviewDialog();
         }
     }
 }

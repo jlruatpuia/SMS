@@ -62,16 +62,41 @@
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCash = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dm = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dp = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.colCash = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lbCSH = new DevExpress.XtraEditors.LabelControl();
+            this.lbEML = new DevExpress.XtraEditors.LabelControl();
+            this.lbPHN = new DevExpress.XtraEditors.LabelControl();
+            this.lbADR = new DevExpress.XtraEditors.LabelControl();
+            this.lbCNM = new DevExpress.XtraEditors.LabelControl();
+            this.picPHO = new DevExpress.XtraEditors.PictureEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dm)).BeginInit();
             this.dp.SuspendLayout();
+            this.dockPanel2_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPHO.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -159,6 +184,7 @@
             this.bPPreview.Id = 6;
             this.bPPreview.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bPPreview.LargeGlyph")));
             this.bPPreview.Name = "bPPreview";
+            this.bPPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bPPreview_ItemClick);
             // 
             // barButtonItem7
             // 
@@ -350,6 +376,7 @@
             this.grv.Name = "grv";
             this.grv.OptionsView.ShowGroupPanel = false;
             this.grv.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grv_FocusedRowChanged);
+            this.grv.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.grv_FocusedRowObjectChanged);
             this.grv.RowCountChanged += new System.EventHandler(this.grv_RowCountChanged);
             // 
             // colID
@@ -371,7 +398,7 @@
             this.colName.OptionsColumn.ReadOnly = true;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
-            this.colName.Width = 274;
+            this.colName.Width = 119;
             // 
             // colAddress
             // 
@@ -383,7 +410,7 @@
             this.colAddress.OptionsColumn.ReadOnly = true;
             this.colAddress.Visible = true;
             this.colAddress.VisibleIndex = 1;
-            this.colAddress.Width = 297;
+            this.colAddress.Width = 129;
             // 
             // colPhone
             // 
@@ -395,7 +422,7 @@
             this.colPhone.OptionsColumn.ReadOnly = true;
             this.colPhone.Visible = true;
             this.colPhone.VisibleIndex = 2;
-            this.colPhone.Width = 144;
+            this.colPhone.Width = 62;
             // 
             // colEmail
             // 
@@ -407,7 +434,19 @@
             this.colEmail.OptionsColumn.ReadOnly = true;
             this.colEmail.Visible = true;
             this.colEmail.VisibleIndex = 3;
-            this.colEmail.Width = 125;
+            this.colEmail.Width = 101;
+            // 
+            // colCash
+            // 
+            this.colCash.Caption = "Cash in Hand";
+            this.colCash.FieldName = "Balance";
+            this.colCash.Name = "colCash";
+            this.colCash.OptionsColumn.AllowEdit = false;
+            this.colCash.OptionsColumn.AllowFocus = false;
+            this.colCash.OptionsColumn.ReadOnly = true;
+            this.colCash.Visible = true;
+            this.colCash.VisibleIndex = 4;
+            this.colCash.Width = 60;
             // 
             // colPHO
             // 
@@ -446,22 +485,167 @@
             // 
             // dockPanel2_Container
             // 
+            this.dockPanel2_Container.Controls.Add(this.layoutControl1);
             this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
             this.dockPanel2_Container.Size = new System.Drawing.Size(251, 299);
             this.dockPanel2_Container.TabIndex = 0;
             // 
-            // colCash
+            // layoutControl1
             // 
-            this.colCash.Caption = "Cash in Hand";
-            this.colCash.FieldName = "Balance";
-            this.colCash.Name = "colCash";
-            this.colCash.OptionsColumn.AllowEdit = false;
-            this.colCash.OptionsColumn.AllowFocus = false;
-            this.colCash.OptionsColumn.ReadOnly = true;
-            this.colCash.Visible = true;
-            this.colCash.VisibleIndex = 4;
-            this.colCash.Width = 238;
+            this.layoutControl1.Controls.Add(this.lbCSH);
+            this.layoutControl1.Controls.Add(this.lbEML);
+            this.layoutControl1.Controls.Add(this.lbPHN);
+            this.layoutControl1.Controls.Add(this.lbADR);
+            this.layoutControl1.Controls.Add(this.lbCNM);
+            this.layoutControl1.Controls.Add(this.picPHO);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(251, 299);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lbCSH
+            // 
+            this.lbCSH.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lbCSH.Location = new System.Drawing.Point(12, 274);
+            this.lbCSH.Name = "lbCSH";
+            this.lbCSH.Size = new System.Drawing.Size(227, 13);
+            this.lbCSH.StyleController = this.layoutControl1;
+            this.lbCSH.TabIndex = 9;
+            this.lbCSH.Text = "labelControl5";
+            // 
+            // lbEML
+            // 
+            this.lbEML.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lbEML.Location = new System.Drawing.Point(12, 241);
+            this.lbEML.Name = "lbEML";
+            this.lbEML.Size = new System.Drawing.Size(227, 13);
+            this.lbEML.StyleController = this.layoutControl1;
+            this.lbEML.TabIndex = 8;
+            this.lbEML.Text = "labelControl4";
+            // 
+            // lbPHN
+            // 
+            this.lbPHN.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lbPHN.Location = new System.Drawing.Point(12, 208);
+            this.lbPHN.Name = "lbPHN";
+            this.lbPHN.Size = new System.Drawing.Size(227, 13);
+            this.lbPHN.StyleController = this.layoutControl1;
+            this.lbPHN.TabIndex = 7;
+            this.lbPHN.Text = "labelControl3";
+            // 
+            // lbADR
+            // 
+            this.lbADR.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lbADR.Location = new System.Drawing.Point(12, 175);
+            this.lbADR.Name = "lbADR";
+            this.lbADR.Size = new System.Drawing.Size(227, 13);
+            this.lbADR.StyleController = this.layoutControl1;
+            this.lbADR.TabIndex = 6;
+            this.lbADR.Text = "labelControl2";
+            // 
+            // lbCNM
+            // 
+            this.lbCNM.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lbCNM.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lbCNM.Location = new System.Drawing.Point(12, 142);
+            this.lbCNM.Name = "lbCNM";
+            this.lbCNM.Size = new System.Drawing.Size(227, 13);
+            this.lbCNM.StyleController = this.layoutControl1;
+            this.lbCNM.TabIndex = 5;
+            this.lbCNM.Text = "labelControl1";
+            // 
+            // picPHO
+            // 
+            this.picPHO.Location = new System.Drawing.Point(12, 12);
+            this.picPHO.MenuManager = this.ribbonControl1;
+            this.picPHO.Name = "picPHO";
+            this.picPHO.Properties.AllowFocused = false;
+            this.picPHO.Properties.ReadOnly = true;
+            this.picPHO.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picPHO.Properties.ShowMenu = false;
+            this.picPHO.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.picPHO.Size = new System.Drawing.Size(227, 110);
+            this.picPHO.StyleController = this.layoutControl1;
+            this.picPHO.TabIndex = 4;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutControlItem6});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(251, 299);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.picPHO;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(231, 114);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.lbCNM;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 114);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(231, 33);
+            this.layoutControlItem2.Text = "Name:";
+            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(115, 13);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.lbADR;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 147);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(231, 33);
+            this.layoutControlItem3.Text = "Address:";
+            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(115, 13);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.lbPHN;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 180);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(231, 33);
+            this.layoutControlItem4.Text = "Phone No:";
+            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(115, 13);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.lbEML;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 213);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(231, 33);
+            this.layoutControlItem5.Text = "Email:";
+            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(115, 13);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.lbCSH;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 246);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(231, 33);
+            this.layoutControlItem6.Text = "Cash in Hand (Balance):";
+            this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(115, 13);
             // 
             // Customer
             // 
@@ -477,6 +661,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.grv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dm)).EndInit();
             this.dp.ResumeLayout(false);
+            this.dockPanel2_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPHO.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,5 +715,19 @@
         private DevExpress.XtraBars.Docking.DockPanel dp;
         private DevExpress.XtraBars.Docking.DockManager dm;
         private DevExpress.XtraGrid.Columns.GridColumn colCash;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.LabelControl lbCSH;
+        private DevExpress.XtraEditors.LabelControl lbEML;
+        private DevExpress.XtraEditors.LabelControl lbPHN;
+        private DevExpress.XtraEditors.LabelControl lbADR;
+        private DevExpress.XtraEditors.LabelControl lbCNM;
+        private DevExpress.XtraEditors.PictureEdit picPHO;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }
